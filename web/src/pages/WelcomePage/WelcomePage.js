@@ -16,7 +16,7 @@ const WelcomePage = () => {
         what it{"'"}s related to. While not exhaustive, below are some of the
         technologies I work with.
       </p>
-      <ul className="font-body flex w-full flex-wrap mt-4">
+      <ul className="font-body flex w-full flex-wrap justify-between mt-4">
         <li className="h-8 py-1 px-2 mx-2 bg-purpleLight rounded-md text-white mb-2">
           RedwoodJs
         </li>
