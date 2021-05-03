@@ -21,12 +21,18 @@ describe('projects', () => {
 
   scenario('creates a project', async (scenario) => {
     const result = await createProject({
-      input: { title: 'String', description: 'String', technologies: 'String' },
+      input: {
+        title: 'String',
+        description: 'String',
+        technologies: 'String',
+        imageLink: 'String',
+      },
     })
 
     expect(result.title).toEqual('String')
     expect(result.description).toEqual('String')
     expect(result.technologies).toEqual('String')
+    expect(result.imageLink).toEqual('String')
   })
 
   scenario('updates a project', async (scenario) => {

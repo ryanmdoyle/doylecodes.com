@@ -73,6 +73,10 @@ const Project = ({ project }) => {
               <td>{project.technologies}</td>
             </tr>
             <tr>
+              <th>Image link</th>
+              <td>{project.imageLink}</td>
+            </tr>
+            <tr>
               <th>Github</th>
               <td>{project.github}</td>
             </tr>

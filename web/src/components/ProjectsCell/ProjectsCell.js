@@ -1,3 +1,4 @@
+import ProjectCard from 'src/components/ProjectCard/ProjectCard'
 export const QUERY = gql`
   query ProjectsQuery {
     projects {
@@ -20,5 +21,17 @@ export const Failure = ({ error }) => (
 )
 
 export const Success = ({ projects }) => {
-  return <div>{JSON.stringify(projects)}</div>
+  return projects.map((project) => {
+    return (
+      <ProjectCard
+        key={project.id}
+        id={project.id}
+        title={project.title}
+        description={project.description}
+        technologies={project.technologies}
+        github={project.github}
+        href={project.href}
+      />
+    )
+  })
 }

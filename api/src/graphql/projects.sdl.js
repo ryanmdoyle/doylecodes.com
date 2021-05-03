@@ -4,6 +4,7 @@ export const schema = gql`
     title: String!
     description: String!
     technologies: String!
+    imageLink: String!
     github: String
     href: String
   }
@@ -17,6 +18,7 @@ export const schema = gql`
     title: String!
     description: String!
     technologies: String!
+    imageLink: String!
     github: String
     href: String
   }
@@ -25,6 +27,7 @@ export const schema = gql`
     title: String
     description: String
     technologies: String
+    imageLink: String
     github: String
     href: String
   }

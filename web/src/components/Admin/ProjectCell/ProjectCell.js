@@ -7,6 +7,7 @@ export const QUERY = gql`
       title
       description
       technologies
+      imageLink
       github
       href
     }

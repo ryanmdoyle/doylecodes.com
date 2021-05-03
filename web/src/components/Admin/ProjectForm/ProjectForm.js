@@ -77,6 +77,22 @@ const ProjectForm = (props) => {
         <FieldError name="technologies" className="rw-field-error" />
 
         <Label
+          name="imageLink"
+          className="rw-label"
+          errorClassName="rw-label rw-label-error"
+        >
+          Image link
+        </Label>
+        <TextField
+          name="imageLink"
+          defaultValue={props.project?.imageLink}
+          className="rw-input"
+          errorClassName="rw-input rw-input-error"
+          validation={{ required: true }}
+        />
+        <FieldError name="imageLink" className="rw-field-error" />
+
+        <Label
           name="github"
           className="rw-label"
           errorClassName="rw-label rw-label-error"

@@ -10,6 +10,7 @@ export const QUERY = gql`
       title
       description
       technologies
+      imageLink
       github
       href
     }
@@ -22,6 +23,7 @@ const UPDATE_PROJECT_MUTATION = gql`
       title
       description
       technologies
+      imageLink
       github
       href
     }

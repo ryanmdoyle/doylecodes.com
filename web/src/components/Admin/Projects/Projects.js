@@ -65,6 +65,7 @@ const ProjectsList = ({ projects }) => {
             <th>Title</th>
             <th>Description</th>
             <th>Technologies</th>
+            <th>Image link</th>
             <th>Github</th>
             <th>Href</th>
             <th>&nbsp;</th>
@@ -77,6 +78,7 @@ const ProjectsList = ({ projects }) => {
               <td>{truncate(project.title)}</td>
               <td>{truncate(project.description)}</td>
               <td>{truncate(project.technologies)}</td>
+              <td>{truncate(project.imageLink)}</td>
               <td>{truncate(project.github)}</td>
               <td>{truncate(project.href)}</td>
               <td>
