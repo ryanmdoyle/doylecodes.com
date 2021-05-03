@@ -6,6 +6,7 @@ export const QUERY = gql`
       title
       description
       technologies
+      imageLink
       github
       href
     }
@@ -29,6 +30,7 @@ export const Success = ({ projects }) => {
         title={project.title}
         description={project.description}
         technologies={project.technologies}
+        imageLink={project.imageLink}
         github={project.github}
         href={project.href}
       />
