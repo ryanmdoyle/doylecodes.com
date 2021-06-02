@@ -4,7 +4,8 @@ export const QUERY = gql`
   query FIND_EMAIL_BY_ID($id: String!) {
     email: email(id: $id) {
       id
-      from
+      name
+      email
       subject
       content
     }

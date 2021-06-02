@@ -30,20 +30,36 @@ const EmailForm = (props) => {
         />
 
         <Label
-          name="from"
+          name="name"
           className="block mt-4 text-purpleLight font-body text-lg"
           errorClassName="rw-label rw-label-error"
         >
-          From
+          Name
         </Label>
         <TextField
-          name="from"
-          defaultValue={props.email?.from}
+          name="name"
+          defaultValue={props.email?.name}
           className="rw-input"
           errorClassName="rw-input rw-input-error"
           validation={{ required: true }}
         />
-        <FieldError name="from" className="rw-field-error" />
+        <FieldError name="name" className="rw-field-error" />
+
+        <Label
+          name="email"
+          className="block mt-4 text-purpleLight font-body text-lg"
+          errorClassName="rw-label rw-label-error"
+        >
+          Email
+        </Label>
+        <TextField
+          name="email"
+          defaultValue={props.email?.email}
+          className="rw-input"
+          errorClassName="rw-input rw-input-error"
+          validation={{ required: true }}
+        />
+        <FieldError name="email" className="rw-field-error" />
 
         <Label
           name="subject"
@@ -66,7 +82,7 @@ const EmailForm = (props) => {
           className="block mt-4 text-purpleLight font-body text-lg"
           errorClassName="rw-label rw-label-error"
         >
-          Content
+          Message
         </Label>
         <TextAreaField
           name="content"

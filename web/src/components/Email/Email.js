@@ -62,7 +62,7 @@ const Email = ({ email }) => {
             </tr>
             <tr>
               <th>From</th>
-              <td>{email.from}</td>
+              <td>{email.email}</td>
             </tr>
             <tr>
               <th>Subject</th>

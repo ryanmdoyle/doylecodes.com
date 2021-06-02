@@ -12,25 +12,24 @@ export const email = ({ id }) => {
 }
 
 export const createEmail = async ({ input }) => {
-  let testAccount = await nodemailer.createTestAccount()
-  let transporter = nodemailer.createTransport({
-    host: 'smtp.ethereal.com',
+  let transporter = await nodemailer.createTransport({
+    host: 'smtp.zoho.com',
     port: 587,
     secure: false, // true for 465, false for other ports
     auth: {
-      user: testAccount.user,
-      pass: testAccount.pass,
-      // user: process.env.EMAIL_USER,
-      // pass: process.env.EMAIL_PASS,
+      // user: testAccount.user,
+      // pass: testAccount.pass,
+      user: process.env.EMAIL_USER,
+      pass: process.env.EMAIL_PASS,
     },
   })
 
   await transporter.sendMail({
-    from: input.from, // sender address
+    from: 'website-form@doylecodes.com', // sender address
     to: 'ryan@doylecodes.com', // list of receivers
     subject: input.subject, // Subject line
     text: input.content, // plain text body
-    html: `<body><p>${input.content}</p></body>`, // html body
+    html: `<body><p>From: ${input.email}</p><p>${input.content}</p><p>- ${input.name}</p></body>`, // html body
   })
 
   return db.email.create({

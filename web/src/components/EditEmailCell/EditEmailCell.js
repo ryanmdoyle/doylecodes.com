@@ -7,7 +7,8 @@ export const QUERY = gql`
   query FIND_EMAIL_BY_ID($id: String!) {
     email: email(id: $id) {
       id
-      from
+      name
+      email
       subject
       content
     }
@@ -17,7 +18,8 @@ const UPDATE_EMAIL_MUTATION = gql`
   mutation UpdateEmailMutation($id: String!, $input: UpdateEmailInput!) {
     updateEmail(id: $id, input: $input) {
       id
-      from
+      name
+      email
       subject
       content
     }

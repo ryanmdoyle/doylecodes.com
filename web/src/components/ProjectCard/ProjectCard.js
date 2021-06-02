@@ -15,21 +15,12 @@ const ProjectCard = ({
     window.open(`https://${href}`, '_blank')
   }
   const openGithub = () => {
-    window.open(`https://${href}`, '_blank')
-  }
-  const MAX_STRING_LENGTH = 12
-
-  const truncate = (text) => {
-    let output = text
-    if (text && text.length > MAX_STRING_LENGTH) {
-      output = output.substring(0, MAX_STRING_LENGTH) + '...'
-    }
-    return output
+    window.open(`https://${github}`, '_blank')
   }
 
   return (
     <div className="flex justify-center w-full">
-      <div className="h-36 md:h-48 lg:h-64 w-full lg:w-3/4 2xl:w-2/3 bg-whiteSoft rounded-md border-2 border-purpleLight hover:border-gold mb-4 flex justify-between overflow-hidden">
+      <div className="h-36 md:h-48 lg:h-64 w-full lg:w-3/4 2xl:w-2/3 bg-whiteSoft rounded-md border-2 border-purpleLight mb-4 flex justify-between overflow-hidden">
         <div className="p-2 lg:p-4 flex flex-col justify-between">
           <div>
             {/* Title */}
@@ -54,13 +45,15 @@ const ProjectCard = ({
           </div>
           {/* Social Links */}
           <div className="flex justify-self-end">
-            <SvgGithub className="h-4 w-4 md:h-6 md:w-6 lg:h-8 lg:w-8 text-purpleLight" />
-            <div title={href}>
-              <ExternalLinkSVG
-                className="h-4 w-4 md:h-6 md:w-6 lg:h-8 lg:w-8 text-purpleLight hover:text-gold ml-2"
-                onClick={openSite}
+            <button title={github} onClick={openGithub}>
+              <SvgGithub
+                className="h-4 w-4 md:h-6 md:w-6 lg:h-8 lg:w-8 text-purpleLight hover:text-gold"
+                // onClick={openGithub}
               />
-            </div>
+            </button>
+            <button title={href} onClick={openSite}>
+              <ExternalLinkSVG className="h-4 w-4 md:h-6 md:w-6 lg:h-8 lg:w-8 text-purpleLight hover:text-gold ml-2" />
+            </button>
           </div>
         </div>
         <img src={imageLink} alt={title} className="h-full"></img>

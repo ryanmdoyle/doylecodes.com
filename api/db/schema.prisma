@@ -23,7 +23,8 @@ model Project {
 
 model Email {
   id      String @id @default(cuid())
-  from    String
+  name    String
+  email   String
   subject String
   content String
 }

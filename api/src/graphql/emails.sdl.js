@@ -1,7 +1,8 @@
 export const schema = gql`
   type Email {
     id: String!
-    from: String!
+    name: String!
+    email: String!
     subject: String!
     content: String!
   }
@@ -12,13 +13,15 @@ export const schema = gql`
   }
 
   input CreateEmailInput {
-    from: String!
+    name: String!
+    email: String!
     subject: String!
     content: String!
   }
 
   input UpdateEmailInput {
-    from: String
+    name: String
+    email: String
     subject: String
     content: String
   }

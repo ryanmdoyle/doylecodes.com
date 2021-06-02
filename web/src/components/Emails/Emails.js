@@ -62,7 +62,7 @@ const EmailsList = ({ emails }) => {
         <thead>
           <tr>
             <th>Id</th>
-            <th>From</th>
+            <th>Name</th>
             <th>Subject</th>
             <th>Content</th>
             <th>&nbsp;</th>
@@ -72,7 +72,7 @@ const EmailsList = ({ emails }) => {
           {emails.map((email) => (
             <tr key={email.id}>
               <td>{truncate(email.id)}</td>
-              <td>{truncate(email.from)}</td>
+              <td>{truncate(email.name)}</td>
               <td>{truncate(email.subject)}</td>
               <td>{truncate(email.content)}</td>
               <td>
