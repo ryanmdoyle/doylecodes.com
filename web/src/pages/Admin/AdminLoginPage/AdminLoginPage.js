@@ -16,13 +16,14 @@ const AdminLoginPage = () => {
       {isAuthenticated && (
         <>
           <button
-            className="w-24 h-8 flex justify-center items-center bg-purpleLight hover:bg-purpleDark text-white rounded-md"
+            className="px-2 h-8 flex justify-center items-center bg-purpleLight hover:bg-purpleDark text-white rounded-md"
             onClick={logIn}
           >
-            View Admin Console
+            Edit Projects
           </button>
+          <br></br>
           <button
-            className="w-24 h-8 flex justify-center items-center bg-purpleLight hover:bg-purpleDark text-white rounded-md"
+            className="px-2 h-8 flex justify-center items-center bg-purpleLight hover:bg-purpleDark text-white rounded-md"
             onClick={logOut}
           >
             Logout
