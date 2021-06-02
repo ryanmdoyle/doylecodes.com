@@ -3,8 +3,6 @@ import { toast } from '@redwoodjs/web/toast'
 import { navigate, routes } from '@redwoodjs/router'
 import EmailForm from 'src/components/EmailForm'
 
-import { QUERY } from 'src/components/EmailsCell'
-
 const CREATE_EMAIL_MUTATION = gql`
   mutation CreateEmailMutation($input: CreateEmailInput!) {
     createEmail(input: $input) {
