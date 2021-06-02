@@ -1,16 +1,11 @@
 import { Link, routes } from '@redwoodjs/router'
 
+import NewEmail from 'src/components/NewEmail/NewEmail'
+
 const ContactPage = () => {
   return (
     <>
-      <h1>ContactPage</h1>
-      <p>
-        Find me in <code>./web/src/pages/ContactPage/ContactPage.js</code>
-      </p>
-      <p>
-        My default route is named <code>contact</code>, link to me with `
-        <Link to={routes.contact()}>Contact</Link>`
-      </p>
+      <NewEmail />
     </>
   )
 }

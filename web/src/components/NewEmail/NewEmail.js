@@ -16,8 +16,8 @@ const CREATE_EMAIL_MUTATION = gql`
 const NewEmail = () => {
   const [createEmail, { loading, error }] = useMutation(CREATE_EMAIL_MUTATION, {
     onCompleted: () => {
-      toast.success('Email created')
-      navigate(routes.emails())
+      toast.success('Email sent. Thanks!')
+      navigate(routes.welcome())
     },
   })
 
@@ -26,13 +26,12 @@ const NewEmail = () => {
   }
 
   return (
-    <div className="rw-segment">
-      <header className="rw-segment-header">
-        <h2 className="rw-heading rw-heading-secondary">New Email</h2>
-      </header>
-      <div className="rw-segment-main">
-        <EmailForm onSave={onSave} loading={loading} error={error} />
-      </div>
+    <div className=" p-4">
+      <h2 className="font-display text-purpleLight font-bold text-center text-3xl">
+        Get in touch!
+      </h2>
+
+      <EmailForm onSave={onSave} loading={loading} error={error} />
     </div>
   )
 }

@@ -1,4 +1,4 @@
-const ExternalLinkSVG = ({ className }) => {
+const ExternalLinkSVG = ({ className, onClick }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -6,6 +6,7 @@ const ExternalLinkSVG = ({ className }) => {
       fill="none"
       viewBox="0 0 24 24"
       stroke="currentColor"
+      onClick={onClick}
     >
       <path
         strokeLinecap="round"

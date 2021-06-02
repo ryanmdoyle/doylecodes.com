@@ -4,6 +4,7 @@ import {
   FieldError,
   Label,
   TextField,
+  TextAreaField,
   Submit,
 } from '@redwoodjs/forms'
 
@@ -30,7 +31,7 @@ const EmailForm = (props) => {
 
         <Label
           name="from"
-          className="rw-label"
+          className="block mt-4 text-purpleLight font-body text-lg"
           errorClassName="rw-label rw-label-error"
         >
           From
@@ -46,7 +47,7 @@ const EmailForm = (props) => {
 
         <Label
           name="subject"
-          className="rw-label"
+          className="block mt-4 text-purpleLight font-body text-lg"
           errorClassName="rw-label rw-label-error"
         >
           Subject
@@ -62,12 +63,12 @@ const EmailForm = (props) => {
 
         <Label
           name="content"
-          className="rw-label"
+          className="block mt-4 text-purpleLight font-body text-lg"
           errorClassName="rw-label rw-label-error"
         >
           Content
         </Label>
-        <TextField
+        <TextAreaField
           name="content"
           defaultValue={props.email?.content}
           className="rw-input"
@@ -77,7 +78,10 @@ const EmailForm = (props) => {
         <FieldError name="content" className="rw-field-error" />
 
         <div className="rw-button-group">
-          <Submit disabled={props.loading} className="rw-button rw-button-blue">
+          <Submit
+            disabled={props.loading}
+            className="cursor-pointer font-body text-whiteSoft bg-purpleLight py-2 px-4 rounded-md hover:bg-gold hover:text-purpleDark"
+          >
             Save
           </Submit>
         </div>
