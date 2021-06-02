@@ -32,7 +32,7 @@ const EmailForm = (props) => {
         <Label
           name="name"
           className="block mt-4 text-purpleLight font-body text-lg"
-          errorClassName="rw-label rw-label-error"
+          errorClassName="block mt-4 text-red-600 font-body text-lg"
         >
           Name
         </Label>
@@ -43,12 +43,15 @@ const EmailForm = (props) => {
           errorClassName="rw-input rw-input-error"
           validation={{ required: true }}
         />
-        <FieldError name="name" className="rw-field-error" />
+        <FieldError
+          name="name"
+          className="text-red-600 font-body text-sm uppercase"
+        />
 
         <Label
           name="email"
           className="block mt-4 text-purpleLight font-body text-lg"
-          errorClassName="rw-label rw-label-error"
+          errorClassName="block mt-4 text-red-600 font-body text-lg"
         >
           Email
         </Label>
@@ -57,14 +60,22 @@ const EmailForm = (props) => {
           defaultValue={props.email?.email}
           className="rw-input"
           errorClassName="rw-input rw-input-error"
-          validation={{ required: true }}
+          validation={{
+            required: true,
+            pattern:
+              // eslint-disable-next-line no-control-regex
+              /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/,
+          }}
         />
-        <FieldError name="email" className="rw-field-error" />
+        <FieldError
+          name="email"
+          className="text-red-600 font-body text-sm uppercase"
+        />
 
         <Label
           name="subject"
           className="block mt-4 text-purpleLight font-body text-lg"
-          errorClassName="rw-label rw-label-error"
+          errorClassName="block mt-4 text-red-600 font-body text-lg"
         >
           Subject
         </Label>
@@ -75,12 +86,15 @@ const EmailForm = (props) => {
           errorClassName="rw-input rw-input-error"
           validation={{ required: true }}
         />
-        <FieldError name="subject" className="rw-field-error" />
+        <FieldError
+          name="subject"
+          className="text-red-600 font-body text-sm uppercase"
+        />
 
         <Label
           name="content"
           className="block mt-4 text-purpleLight font-body text-lg"
-          errorClassName="rw-label rw-label-error"
+          errorClassName="block mt-4 text-red-600 font-body text-lg"
         >
           Message
         </Label>
@@ -91,7 +105,10 @@ const EmailForm = (props) => {
           errorClassName="rw-input rw-input-error"
           validation={{ required: true }}
         />
-        <FieldError name="content" className="rw-field-error" />
+        <FieldError
+          name="content"
+          className="text-red-600 font-body text-sm uppercase"
+        />
 
         <div className="rw-button-group">
           <Submit
