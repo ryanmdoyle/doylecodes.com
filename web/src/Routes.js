@@ -10,9 +10,12 @@
 import { Router, Route, Set } from '@redwoodjs/router'
 import MainLayout from 'src/layouts/MainLayout/MainLayout'
 
+import AdminLoginPage from 'src/pages/Admin/AdminLoginPage/AdminLoginPage'
+
 const Routes = () => {
   return (
     <Router>
+      <Route path="/admin/login" page={AdminLoginPage} name="login" />
       <Set wrap={MainLayout}>
         <Route notfound page={NotFoundPage} />
         <Route path="/" page={WelcomePage} name="welcome" />
