@@ -20,18 +20,18 @@ const Routes = () => {
         <Route path="/" page={WelcomePage} name="welcome" />
         <Route path="/contact" page={ContactPage} name="contact" />
         <Route path="/work" page={WorkPage} name="work" />
-      </Set>
-      <Private unauthenticated="welcome" role={['ADMIN']}>
         <Route path="/admin/login" page={AdminLoginPage} name="login" />
-        <Route path="/emails/new" page={NewEmailPage} name="newEmail" />
-        <Route path="/emails/{id}/edit" page={EditEmailPage} name="editEmail" />
-        <Route path="/emails/{id}" page={EmailPage} name="email" />
-        <Route path="/emails" page={EmailsPage} name="emails" />
-        <Route path="/admin/projects/new" page={AdminNewProjectPage} name="adminNewProject" />
-        <Route path="/admin/projects/{id}/edit" page={AdminEditProjectPage} name="adminEditProject" />
-        <Route path="/admin/projects/{id}" page={AdminProjectPage} name="adminProject" />
-        <Route path="/admin/projects" page={AdminProjectsPage} name="adminProjects" />
-      </Private>
+        <Private unauthenticated="welcome" role={['ADMIN']}>
+          <Route path="/emails/new" page={NewEmailPage} name="newEmail" />
+          <Route path="/emails/{id}/edit" page={EditEmailPage} name="editEmail" />
+          <Route path="/emails/{id}" page={EmailPage} name="email" />
+          <Route path="/emails" page={EmailsPage} name="emails" />
+          <Route path="/admin/projects/new" page={AdminNewProjectPage} name="adminNewProject" />
+          <Route path="/admin/projects/{id}/edit" page={AdminEditProjectPage} name="adminEditProject" />
+          <Route path="/admin/projects/{id}" page={AdminProjectPage} name="adminProject" />
+          <Route path="/admin/projects" page={AdminProjectsPage} name="adminProjects" />
+        </Private>
+      </Set>
     </Router>
   )
 }
