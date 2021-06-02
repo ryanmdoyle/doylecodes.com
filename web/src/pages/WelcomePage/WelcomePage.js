@@ -1,4 +1,16 @@
 const WelcomePage = () => {
+  const techs = [
+    'RedwoodJs',
+    'Next.js',
+    'Gatsby',
+    'Apollo',
+    'Prisma',
+    'Mongo DB',
+    'PostgreSQL',
+    'Stlyed Components',
+    'Emotion',
+    'React-Spring',
+  ]
   return (
     <div className="w-full flex flex-col justify-center items-center">
       <img
@@ -6,7 +18,7 @@ const WelcomePage = () => {
         alt="headshot"
         className="w-64 rounded-full my-6"
       ></img>
-      <p className="font-body">
+      <p className="font-body w-full lg:w-3/4 mb-8">
         Hey, how{"'"}s it going? I{"'"}m an educator and web developer
         passionate about making applications that are helpful to others. I{"'"}
         ve spend a decade teaching math and science to 6-8th graders outside of
@@ -16,40 +28,15 @@ const WelcomePage = () => {
         what it{"'"}s related to. While not exhaustive, below are some of the
         technologies I work with.
       </p>
-      <ul className="font-body flex w-full flex-wrap justify-between mt-4">
-        <li className="h-8 py-1 px-2 mx-2 bg-purpleLight rounded-md text-white mb-2">
-          RedwoodJs
-        </li>
-        <li className="h-8 py-1 px-2 mx-2 bg-purpleLight rounded-md text-white mb-2">
-          Next.js
-        </li>
-        <li className="h-8 py-1 px-2 mx-2 bg-purpleLight rounded-md text-white mb-2">
-          Gatsby
-        </li>
-        <li className="h-8 py-1 px-2 mx-2 bg-purpleLight rounded-md text-white mb-2">
-          Apollo
-        </li>
-        <li className="h-8 py-1 px-2 mx-2 bg-purpleLight rounded-md text-white mb-2">
-          Prisma
-        </li>
-        <li className="h-8 py-1 px-2 mx-2 bg-purpleLight rounded-md text-white mb-2">
-          GraphQL
-        </li>
-        <li className="h-8 py-1 px-2 mx-2 bg-purpleLight rounded-md text-white mb-2">
-          Mongo DB
-        </li>
-        <li className="h-8 py-1 px-2 mx-2 bg-purpleLight rounded-md text-white mb-2">
-          PostgreSQL
-        </li>
-        <li className="h-8 py-1 px-2 mx-2 bg-purpleLight rounded-md text-white mb-2">
-          Stlyed Components
-        </li>
-        <li className="h-8 py-1 px-2 mx-2 bg-purpleLight rounded-md text-white mb-2">
-          Emotion
-        </li>
-        <li className="h-8 py-1 px-2 mx-2 bg-purpleLight rounded-md text-white mb-2">
-          React-Spring
-        </li>
+      <ul className="font-body flex flex-wrap justify-between mt-4 w-full lg:w-3/4">
+        {techs.map((tech) => (
+          <li
+            key={tech}
+            className="h-8 py-1 px-2 mx-2 bg-purpleLight rounded-md text-white mb-2"
+          >
+            {tech}
+          </li>
+        ))}
       </ul>
     </div>
   )

@@ -71,7 +71,7 @@ const EmailForm = (props) => {
         <TextAreaField
           name="content"
           defaultValue={props.email?.content}
-          className="rw-input"
+          className="rw-input h-56"
           errorClassName="rw-input rw-input-error"
           validation={{ required: true }}
         />

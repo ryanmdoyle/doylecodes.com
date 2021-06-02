@@ -26,11 +26,10 @@ const NewEmail = () => {
   }
 
   return (
-    <div className=" p-4">
+    <div className="p-4">
       <h2 className="font-display text-purpleLight font-bold text-center text-3xl">
         Get in touch!
       </h2>
-
       <EmailForm onSave={onSave} loading={loading} error={error} />
     </div>
   )
