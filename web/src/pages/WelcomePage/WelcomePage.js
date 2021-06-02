@@ -23,8 +23,8 @@ const WelcomePage = () => {
         passionate about making applications that are helpful to others. I{"'"}
         ve spend a decade teaching math and science to 6-8th graders outside of
         Sacramento, CA. While most of what I{"'"}ve created has something to do
-        with education (solving problems I have on a daily basis) I love
-        learning about the newest advencements in web technologies regardless of
+        with education, solving problems I have on a daily basis, I love
+        learning about the newest advancements in web technologies regardless of
         what it{"'"}s related to. While not exhaustive, below are some of the
         technologies I work with.
       </p>

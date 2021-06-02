@@ -1,4 +1,5 @@
 import { db } from 'src/lib/db'
+import md5 from 'md5'
 import nodemailer from 'nodemailer'
 
 export const emails = () => {
@@ -31,9 +32,14 @@ export const createEmail = async ({ input }) => {
     text: input.content, // plain text body
     html: `<body><p>From: ${input.email}</p><p>${input.content}</p><p>- ${input.name}</p></body>`, // html body
   })
-
+  const emailHash = md5(input.email)
   return db.email.create({
-    data: input,
+    data: {
+      name: input.name,
+      email: emailHash,
+      subject: input.subject,
+      content: input.content,
+    },
   })
 }
 
