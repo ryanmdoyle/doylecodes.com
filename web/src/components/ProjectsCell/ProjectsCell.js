@@ -7,6 +7,7 @@ export const QUERY = gql`
       description
       technologies
       imageLink
+      order
       github
       href
     }
@@ -22,7 +23,8 @@ export const Failure = ({ error }) => (
 )
 
 export const Success = ({ projects }) => {
-  return projects.map((project) => {
+  const sorted = projects.slice().sort((a, b) => b.order - a.order)
+  return sorted.map((project) => {
     return (
       <ProjectCard
         key={project.id}

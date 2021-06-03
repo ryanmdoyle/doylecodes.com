@@ -17,6 +17,7 @@ model Project {
   description  String
   technologies String
   imageLink    String
+  order        Int?    @default(autoincrement())
   github       String?
   href         String?
 }

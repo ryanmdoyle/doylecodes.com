@@ -5,6 +5,7 @@ export const schema = gql`
     description: String!
     technologies: String!
     imageLink: String!
+    order: Int
     github: String
     href: String
   }
@@ -19,6 +20,7 @@ export const schema = gql`
     description: String!
     technologies: String!
     imageLink: String!
+    order: Int
     github: String
     href: String
   }
@@ -28,6 +30,7 @@ export const schema = gql`
     description: String
     technologies: String
     imageLink: String
+    order: Int
     github: String
     href: String
   }
