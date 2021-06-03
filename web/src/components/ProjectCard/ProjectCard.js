@@ -24,18 +24,18 @@ const ProjectCard = ({
         <div className="p-2 lg:p-4 flex flex-col justify-between">
           <div>
             {/* Title */}
-            <h2 className="font-display font-bold text-purpleDark text-md md:text-xl lg:text-3xl">
+            <h2 className="font-display font-bold text-purpleDark text-md md:text-lg lg:text-2xl xl:text-3xl">
               {title}
             </h2>
             {/* Description */}
-            <p className="font-body text-purpleLight text-sm md:text-lg lg:text-xl">
+            <p className="font-body text-purpleLight text-xs md:text-sm lg:text-base xl:text-lg">
               {description}
             </p>
             {/* Tech List */}
-            <ul className="font-body flex w-full flex-wrap justify-start mt-1 md: mt-2 lg:mt-4">
+            <ul className="font-body flex w-full flex-wrap justify-start mt-1 md: mt-2 lg:mt-4 hidden sm:flex">
               {techArray?.map((tech) => (
                 <li
-                  className="h-6 lg:h-8 py-1 px-2 mr-1 md:mr-2 mb-1 bg-purpleLight rounded-md text-white text-xs md:text-md lg:text-lg flex justify-center items-center"
+                  className="h-6 lg:h-8 p-1 md:p-2 mr-1 md:mr-2 mb-1 bg-purpleLight rounded-md text-white text-xs md:text-sm lg:text-base xl:text-lg flex justify-center items-center"
                   key={tech}
                 >
                   {tech}
