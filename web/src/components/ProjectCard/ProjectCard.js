@@ -56,7 +56,11 @@ const ProjectCard = ({
             </button>
           </div>
         </div>
-        <img src={imageLink} alt={title} className="h-full"></img>
+        <img
+          src={imageLink}
+          alt={title}
+          className="h-full w-36 md:w-48 lg:w-64 object-cover"
+        ></img>
       </div>
     </div>
   )
