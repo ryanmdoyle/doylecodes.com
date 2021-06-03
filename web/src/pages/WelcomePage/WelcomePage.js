@@ -1,13 +1,15 @@
 const WelcomePage = () => {
   const techs = [
-    'RedwoodJs',
+    'Redwood',
     'Next.js',
     'Gatsby',
     'Apollo',
+    'GraphQL',
     'Prisma',
     'Mongo DB',
     'PostgreSQL',
-    'Stlyed Components',
+    'Sanity',
+    'Styled Components',
     'Emotion',
     'React-Spring',
   ]
@@ -18,7 +20,7 @@ const WelcomePage = () => {
         alt="headshot"
         className="w-64 rounded-full my-6"
       ></img>
-      <p className="font-body w-full lg:w-3/4 mb-8">
+      <p className="font-body w-full lg:w-3/4 mb-8 text-center">
         Hey, how{"'"}s it going? I{"'"}m an educator and web developer
         passionate about making applications that are helpful to others. I{"'"}
         ve spend a decade teaching math and science to 6-8th graders outside of
@@ -26,7 +28,7 @@ const WelcomePage = () => {
         with education, solving problems I have on a daily basis, I love
         learning about the newest advancements in web technologies regardless of
         what it{"'"}s related to. While not exhaustive, below are some of the
-        technologies I work with.
+        technologies I like to work with.
       </p>
       <ul className="font-body flex flex-wrap justify-between mt-4 w-full lg:w-3/4">
         {techs.map((tech) => (
