@@ -1,4 +1,6 @@
 import ProjectCard from 'src/components/ProjectCard/ProjectCard'
+import Loader from 'src/components/Loader/Loader'
+
 export const QUERY = gql`
   query ProjectsQuery {
     projects {
@@ -14,7 +16,11 @@ export const QUERY = gql`
   }
 `
 
-export const Loading = () => <div>Loading...</div>
+export const Loading = () => (
+  <div className="flex justify-center items-center h-96 text-purpleLight">
+    <Loader />
+  </div>
+)
 
 export const Empty = () => <div>Empty</div>
 
