@@ -1,6 +1,6 @@
 // Create the Notion API Client
 import { Client } from '@notionhq/client';
-import { NOTION_API_SECRET } from '$env/static/private';
+import { NOTION_API_SECRET, NOTION_PORTFOLIO_DB_ID } from '$env/static/private';
 
 const notion = new Client({
   auth: NOTION_API_SECRET,
@@ -11,7 +11,7 @@ async function getPortfolioData() {
   try {
     // Query the database
     const portfolioData = await notion.databases.query({
-      database_id: "80d8bcded40246cba72c85a7566c5059",
+      database_id: NOTION_PORTFOLIO_DB_ID,
     });
 
     // Filter out the page IDs
