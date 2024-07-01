@@ -22,11 +22,16 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		transition:
+			transform 0.3s ease,
+			background-color 0.3s ease,
+			border 0.3s ease;
 	}
 
 	button:hover {
 		background-color: var(--green);
 		border: 1px solid var(--green);
+		transform: scale(1.05);
 	}
 
 	svg {
