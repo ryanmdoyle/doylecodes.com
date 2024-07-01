@@ -1,30 +1,40 @@
 <script>
 	import ProjectCard from '../components/ProjectCard.svelte';
 	import EmailButton from '../components/EmailButton.svelte';
+	import Socials from '../components/Socials.svelte';
 	export let data;
 	let portfolios = data.portfolioData;
+	const message = `Hello! I'm an educator and web developer from Sacramento, CA, with a decade of experience
+		teaching math and science to 6-8th graders. I'm passionate about crafting user-friendly
+		applications and staying updated on the latest web technologies. Here are a number of projects I
+		have worked on:`;
 </script>
 
 <div class="hero-container">
 	<h5 class="tagline body">DEVELOPER | EDUCATOR | LEARNER</h5>
-	<h1 class="">Ryan Doyle</h1>
-	<p style="font">
-		Hello! I'm an educator and web developer from Sacramento, CA, with a decade of experience
-		teaching math and science to 6-8th graders. I'm passionate about crafting user-friendly
-		applications and staying updated on the latest web technologies. Here are a number of projects I
-		have worked on:
+	<h1 class="name">Ryan Doyle</h1>
+	<p class="message">
+		{message}
 	</p>
-	<EmailButton />
+	<div style="margin-top:2rem;">
+		<Socials />
+	</div>
+	<div style="margin-top:2rem;">
+		<EmailButton />
+	</div>
 </div>
+<div class="divider"></div>
 
 <div class="projects">
 	<h2>Projects</h2>
 	<div class="cards">
 		{#each portfolios as project}
-			<ProjectCard
-				title={project.properties.Name.title[0]?.text?.content}
-				description={project.properties.Description.rich_text[0].text.content}
-			/>
+			<a href="/project/one">
+				<ProjectCard
+					title={project.properties.Name.title[0]?.text?.content}
+					description={project.properties.Description.rich_text[0].text.content}
+				/>
+			</a>
 		{/each}
 	</div>
 </div>
@@ -33,15 +43,20 @@
 	h2,
 	p {
 		text-align: center;
+		line-height: 1.6rem;
 	}
 
-	p {
-		line-height: 1.6rem;
+	.divider {
+		margin: 2rem auto;
+		width: 66vw;
+		height: 1px;
+		background-color: gray;
 	}
 
 	.tagline {
 		color: var(--purple);
 		font-size: 1rem;
+		letter-spacing: 0.3rem;
 	}
 
 	.hero-container,
@@ -52,9 +67,23 @@
 	}
 
 	.hero-container {
-		height: 90vh;
+		height: 100vh;
 		display: flex;
 		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.projects {
+		margin-top: 2rem;
+	}
+
+	.name {
+		font-size: 4rem;
+	}
+
+	.message {
+		letter-spacing: 0.1rem;
 	}
 
 	.cards {
@@ -65,17 +94,29 @@
 		gap: 2rem;
 	}
 
-	.techs {
-		display: flex;
-		flex-wrap: wrap;
-		gap: 0.5rem;
+	@media (max-width: 900px) {
+		p {
+			font-size: 0.9rem;
+		}
+
+		.tagline {
+			font-size: 0.85rem;
+		}
+		.name {
+			font-size: 3rem;
+		}
 	}
 
-	.techs > span {
-		display: inline-block;
-		background-color: var(--light-gray);
-		border-radius: 5px;
-		padding: 0.2rem 0.5rem;
-		font-size: 0.8rem;
+	@media (max-width: 900px) {
+		p {
+			font-size: 0.8rem;
+		}
+
+		.tagline {
+			font-size: 0.75rem;
+		}
+		.name {
+			font-size: 2.5rem;
+		}
 	}
 </style>
