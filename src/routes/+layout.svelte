@@ -2,4 +2,13 @@
 	import '../global.css';
 </script>
 
-<slot></slot>
+<div class="container">
+	<slot></slot>
+</div>
+
+<style>
+	.container {
+		max-width: 900px;
+		margin: auto;
+	}
+</style>

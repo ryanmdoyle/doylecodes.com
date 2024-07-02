@@ -1,4 +1,6 @@
 <script>
+	// @ts-nocheck
+
 	import ProjectCard from '../components/ProjectCard.svelte';
 	import EmailButton from '../components/EmailButton.svelte';
 	import Socials from '../components/Socials.svelte';
@@ -29,7 +31,7 @@
 	<h2>Projects</h2>
 	<div class="cards">
 		{#each portfolios as project}
-			<a href="/project/one">
+			<a href={`/project/${project.id}`}>
 				<ProjectCard
 					title={project.properties.Name.title[0]?.text?.content}
 					description={project.properties.Description.rich_text[0].text.content}
