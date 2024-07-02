@@ -1,4 +1,8 @@
-<button>
+<button
+	on:click={() => {
+		location.href = 'mailto:ryan@doylecodes.com';
+	}}
+>
 	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
 		<path
 			d="M1.5 8.67v8.58a3 3 0 0 0 3 3h15a3 3 0 0 0 3-3V8.67l-8.928 5.493a3 3 0 0 1-3.144 0L1.5 8.67Z"
