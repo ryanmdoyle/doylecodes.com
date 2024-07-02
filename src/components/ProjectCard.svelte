@@ -39,10 +39,15 @@
 		border-radius: 10px;
 		padding: 1rem;
 		filter: drop-shadow(4px 6px 9px #d4d4d4);
+		transition:
+			transform 0.3s ease,
+			drop-shadow 0.3s ease,
+			border 0.3s ease;
 	}
 
 	.card:hover {
 		filter: drop-shadow(4px 6px 9px #9b9b9b);
+		transform: scale(1.02);
 	}
 
 	.techs {
