@@ -1,10 +1,14 @@
 <script>
 	// @ts-nocheck
+	import GithubLink from '$components/GithubLink.svelte';
+	import SiteLink from '$components/SiteLink.svelte';
 	export let data;
 	const { page, blocks } = data;
 	const contentBlocks = blocks;
 	const title = page.properties.Name.title[0].plain_text;
 	const technologies = page.properties.Technologies.multi_select;
+	const githubLink = page.properties.Github.url;
+	const liveLink = page.properties.Link.url;
 </script>
 
 <h2>{title}</h2>
@@ -16,6 +20,16 @@
 		{/each}
 	</ul>
 {/if}
+
+<div class="centered">
+	{#if githubLink}
+		<GithubLink href={githubLink} />
+	{/if}
+
+	{#if liveLink}
+		<SiteLink href={liveLink} />
+	{/if}
+</div>
 
 {#each blocks as block}
 	{#if block.type.toString() === 'heading_3'}
@@ -40,6 +54,7 @@
 
 	ul {
 		list-style: none;
+		padding: 0;
 		display: flex;
 		flex-wrap: wrap;
 		gap: 1rem;
@@ -57,6 +72,13 @@
 	img {
 		max-width: 60%;
 		object-fit: contain;
+	}
+
+	.centered {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 1rem;
 	}
 
 	.image-container {
