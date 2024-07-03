@@ -32,10 +32,7 @@
 	<div class="cards">
 		{#each portfolios as project}
 			<a href={`/project/${project.id}`}>
-				<ProjectCard
-					title={project.properties.Name.title[0]?.text?.content}
-					description={project.properties.Description.rich_text[0].text.content}
-				/>
+				<ProjectCard {project} />
 			</a>
 		{/each}
 	</div>

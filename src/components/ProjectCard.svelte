@@ -1,24 +1,20 @@
 <script>
 	import classView from '$lib/classView.png';
-	export let title = 'title';
-	export let description = 'description';
+	export let project;
+	const title = project.properties.Name.title[0]?.text?.content;
+	const description = project.properties.Description.rich_text[0].text.content;
+	const tech = project.properties.Technologies.multi_select;
+	const cover = project?.cover?.file?.url;
 </script>
 
 <div class="card">
-	<img src={classView} alt="hero img" />
+	<img src={cover} alt="hero img" />
 	<h3 class="">{title}</h3>
 	<p class="">{description}</p>
 	<div class="techs body">
-		<span>Node</span>
-		<span>React</span>
-		<span>Javascript</span>
-		<span>HTML</span>
-		<span>CSS</span>
-		<span>Node</span>
-		<span>React</span>
-		<span>Javascript</span>
-		<span>HTML</span>
-		<span>CSS</span>
+		{#each tech as technology}
+			<span>{technology.name}</span>
+		{/each}
 	</div>
 </div>
 

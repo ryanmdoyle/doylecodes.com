@@ -20,7 +20,7 @@ async function getPortfolioData() {
       .map(block => block.id);
 
     if (pageIds.length === 0) {
-      console.log("No pages found in the database.");
+      console.error("No pages found in the database.");
       return [];
     }
 
