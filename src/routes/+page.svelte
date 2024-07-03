@@ -42,6 +42,9 @@
 </div>
 
 <style>
+	a {
+		text-decoration: none;
+	}
 	h2,
 	p {
 		text-align: center;
