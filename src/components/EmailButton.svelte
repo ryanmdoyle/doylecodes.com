@@ -52,4 +52,18 @@
 	button:hover {
 		filter: drop-shadow(4px 6px 9px #9b9b9b);
 	}
+
+	@media (max-width: 600px) {
+		button {
+			width: 130px;
+			height: 50px;
+			border-radius: 5px;
+		}
+
+		svg {
+			color: var(--cream);
+			height: 20px;
+			margin-right: 0.6rem;
+		}
+	}
 </style>

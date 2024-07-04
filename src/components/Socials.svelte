@@ -88,4 +88,16 @@
 	a:hover svg {
 		fill: var(--green);
 	}
+
+	@media (max-width: 600px) {
+		ul {
+			gap: 1rem;
+			justify-content: center;
+		}
+
+		svg {
+			height: 16px;
+			width: 16px;
+		}
+	}
 </style>

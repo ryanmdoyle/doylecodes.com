@@ -18,14 +18,14 @@
 	<p class="message">
 		{message}
 	</p>
-	<div style="margin-top:2rem;">
+	<div style="margin-top:1rem;">
 		<Socials />
 	</div>
-	<div style="margin-top:2rem;">
+
+	<div style="margin-top:1rem;">
 		<EmailButton />
 	</div>
 </div>
-<div class="divider"></div>
 
 <div class="projects">
 	<h2>Projects</h2>
@@ -46,13 +46,6 @@
 	p {
 		text-align: center;
 		line-height: 1.6rem;
-	}
-
-	.divider {
-		margin: 2rem auto;
-		width: 66vw;
-		height: 1px;
-		background-color: gray;
 	}
 
 	.tagline {
@@ -109,16 +102,28 @@
 		}
 	}
 
-	@media (max-width: 900px) {
+	@media (max-width: 600px) {
 		p {
-			font-size: 0.8rem;
+			font-size: 0.7rem;
+		}
+
+		h2 {
+			font-size: 1.6rem;
 		}
 
 		.tagline {
-			font-size: 0.75rem;
+			font-size: 0.7rem;
+			text-align: center;
+			line-height: 1.2rem;
+			letter-spacing: 0.15rem;
 		}
 		.name {
-			font-size: 2.5rem;
+			font-size: 1.8rem;
+			margin: 1rem 0;
+		}
+
+		.hero-container {
+			height: 90vh;
 		}
 	}
 </style>

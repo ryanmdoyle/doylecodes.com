@@ -70,7 +70,7 @@
 	}
 
 	img {
-		max-width: 60%;
+		max-width: 600px;
 		object-fit: contain;
 	}
 
@@ -90,6 +90,11 @@
 	@media (max-width: 900px) {
 		h3 {
 			text-align: center;
+		}
+
+		img {
+			max-width: 80%;
+			object-fit: contain;
 		}
 	}
 </style>
