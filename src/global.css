@@ -1,0 +1,55 @@
+:root {
+	--gray:  #3F3E40;
+	--purple: #674D8C;
+	--light-purple: #D2C9E0;
+	--light-gray: #C6C1CD;
+	--cream: #E6E1DF;
+	--green:#898772;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	color: #3F3E40; 
+  font-family: 'Fraunces', serif;
+	font-optical-sizing: auto;
+	font-weight: 400;
+	font-style: normal;
+	font-variation-settings:
+		'SOFT' 0,
+		'WONK' 0;
+}
+h1 { font-size: 3em; }
+h2 { font-size: 2.4082em; }
+h3 { font-size: 1.9332em; }
+h4 { font-size: 1.5518em; }
+h5 { font-size: 1.2457em; }
+small { font-size: .8027em; }
+
+p, small, button {
+	font-family: 'Inter', sans-serif;
+	font-optical-sizing: auto;
+	font-weight: 300;
+	font-style: normal;
+	color: gray;
+	font-variation-settings: 'slnt' 0;
+}
+
+.display {
+	color: #3F3E40; 
+	font-family: 'Fraunces', serif;
+	font-optical-sizing: auto;
+	font-weight: 400;
+	font-style: normal;
+	font-variation-settings:
+		'SOFT' 0,
+		'WONK' 0;
+	}
+	
+	.body {
+		color: #3F3E40; 
+		font-family: 'Inter', sans-serif;
+		font-optical-sizing: auto;
+		font-weight: 300;
+		font-style: normal;
+		font-variation-settings: 'slnt' 0;
+	}
+	
