@@ -1,6 +1,5 @@
 <script>
 	// @ts-nocheck
-	export const prerender = true;
 	import ProjectCard from '../components/ProjectCard.svelte';
 	import EmailButton from '../components/EmailButton.svelte';
 	import Socials from '../components/Socials.svelte';
