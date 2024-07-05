@@ -9,7 +9,13 @@
 	const technologies = page.properties.Technologies.multi_select;
 	const githubLink = page.properties.Github.url;
 	const liveLink = page.properties.Link.url;
+	const description = page.properties.Description.rich_text[0].plain_text;
 </script>
+
+<svelte:head>
+	<title>{title} - Doyle Codes</title>
+	<meta name={description} />
+</svelte:head>
 
 <h2>{title}</h2>
 

@@ -12,6 +12,11 @@
 	const message = `Hello! I'm an educator and web developer from Sacramento, CA, with a decade of experience teaching middle school. I specialize in developing innovative applications, particularly in the edtech space, and I'm passionate about crafting user-friendly solutions while staying updated on the latest web technologies. If you're interested in working together, get in touch by email or check out some of my work below.`;
 </script>
 
+<svelte:head>
+	<title>Doyle Codes Portfolio</title>
+	<meta name="Ryan Doyle: Full Stack developer & educator." />
+</svelte:head>
+
 <div class="hero-container">
 	<h5 class="tagline body">DEVELOPER | EDUCATOR | LEARNER</h5>
 	<h1 class="name">Ryan Doyle</h1>
