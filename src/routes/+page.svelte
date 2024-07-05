@@ -1,21 +1,22 @@
 <script>
 	// @ts-nocheck
-
+	export const prerender = true;
 	import ProjectCard from '../components/ProjectCard.svelte';
 	import EmailButton from '../components/EmailButton.svelte';
 	import Socials from '../components/Socials.svelte';
 	export let data;
 	let portfolios = data.portfolioData;
-	const message = `Hello! I'm an educator and web developer from Sacramento, CA, with a decade of experience
-		teaching math and science to 6-8th graders. I'm passionate about crafting user-friendly
-		applications and staying updated on the latest web technologies. Here are a number of projects I
-		have worked on:`;
+	// sort portfolios based on "order" property
+	portfolios.sort((a, b) => {
+		return a.properties.Order.number - b.properties.Order.number;
+	});
+	const message = `Hello! I'm an educator and web developer from Sacramento, CA, with a decade of experience teaching middle school. I specialize in developing innovative applications, particularly in the edtech space, and I'm passionate about crafting user-friendly solutions while staying updated on the latest web technologies. If you're interested in working together, get in touch by email or check out some of my work below.`;
 </script>
 
 <div class="hero-container">
 	<h5 class="tagline body">DEVELOPER | EDUCATOR | LEARNER</h5>
 	<h1 class="name">Ryan Doyle</h1>
-	<p class="message">
+	<p class="message body">
 		{message}
 	</p>
 	<div style="margin-top:1rem;">
@@ -57,7 +58,7 @@
 	.hero-container,
 	.projects {
 		margin: auto;
-		width: 80%;
+		width: 90%;
 		align-items: center;
 	}
 
@@ -79,6 +80,7 @@
 
 	.message {
 		letter-spacing: 0.1rem;
+		max-width: 700px;
 	}
 
 	.cards {
