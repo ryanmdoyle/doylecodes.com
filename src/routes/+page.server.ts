@@ -2,8 +2,6 @@
 import { Client } from '@notionhq/client';
 import { NOTION_API_SECRET, NOTION_PORTFOLIO_DB_ID } from '$env/static/private';
 
-export const prerender = true;
-
 const notion = new Client({
   auth: NOTION_API_SECRET,
 });
