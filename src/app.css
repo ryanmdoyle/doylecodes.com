@@ -1,0 +1,114 @@
+:root {
+	color-scheme: light dark;
+
+	--font-display: 'Fraunces Variable', Georgia, serif;
+	--font-body: 'Inter Variable', system-ui, sans-serif;
+
+	--bg: #f7f4f9;
+	--surface: #ffffff;
+	--text: #26232b;
+	--muted: #5d5766;
+	--border: #e4dfea;
+	--accent: #674d8c;
+	--accent-strong: #523a73;
+	--accent-soft: #eee8f6;
+	--on-accent: #ffffff;
+	--glow: rgb(103 77 140 / 0.14);
+	--shadow: 0 1px 2px rgb(38 35 43 / 0.04), 0 8px 24px -12px rgb(38 35 43 / 0.18);
+
+	--radius: 14px;
+	--page: min(1080px, 100% - 2.5rem);
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--bg: #141217;
+		--surface: #1d1a22;
+		--text: #ece8f1;
+		--muted: #a8a1b2;
+		--border: #2f2a37;
+		--accent: #bba5dd;
+		--accent-strong: #d3c4ec;
+		--accent-soft: #2a2335;
+		--on-accent: #1a1520;
+		--glow: rgb(187 165 221 / 0.1);
+		--shadow: 0 1px 2px rgb(0 0 0 / 0.3), 0 8px 24px -12px rgb(0 0 0 / 0.6);
+	}
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html {
+	-webkit-text-size-adjust: 100%;
+	scroll-behavior: smooth;
+}
+
+body {
+	margin: 0;
+	min-height: 100vh;
+	background: radial-gradient(60rem 30rem at 15% -10%, var(--glow), transparent 70%), var(--bg);
+	color: var(--text);
+	font-family: var(--font-body);
+	font-size: 1.0625rem;
+	line-height: 1.65;
+	-webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3 {
+	font-family: var(--font-display);
+	font-weight: 500;
+	font-optical-sizing: auto;
+	line-height: 1.1;
+	letter-spacing: -0.01em;
+	text-wrap: balance;
+	margin: 0;
+}
+
+p {
+	margin: 0;
+	text-wrap: pretty;
+}
+
+a {
+	color: var(--accent);
+	text-underline-offset: 0.2em;
+}
+
+:focus-visible {
+	outline: 2px solid var(--accent);
+	outline-offset: 3px;
+	border-radius: 4px;
+}
+
+img {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
+.visually-hidden {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	clip-path: inset(50%);
+	white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
+
+	*,
+	*::before,
+	*::after {
+		transition-duration: 0.01ms !important;
+	}
+}

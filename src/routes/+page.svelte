@@ -1,135 +1,137 @@
-<script>
-	// @ts-nocheck
-	import ProjectCard from '../components/ProjectCard.svelte';
-	import EmailButton from '../components/EmailButton.svelte';
-	import Socials from '../components/Socials.svelte';
-	export let data;
-	let portfolios = data.portfolioData;
-	// sort portfolios based on "order" property
-	portfolios.sort((a, b) => {
-		return a.properties.Order.number - b.properties.Order.number;
-	});
-	const message = `Hello! I'm an educator and web developer from Sacramento, CA, with a decade of experience teaching middle school. I specialize in developing innovative applications, particularly in the edtech space, and I'm passionate about crafting user-friendly solutions while staying updated on the latest web technologies. If you're interested in working together, get in touch by email or check out some of my work below.`;
+<script lang="ts">
+	import FeaturedProject from '#lib/components/FeaturedProject.svelte';
+	import ProjectCard from '#lib/components/ProjectCard.svelte';
+	import SocialLinks from '#lib/components/SocialLinks.svelte';
+	import { email } from '#lib/links.ts';
+	import { projects } from '#lib/projects.ts';
+
+	const featured = projects.filter((project) => project.featured);
+	const others = projects.filter((project) => !project.featured);
 </script>
 
 <svelte:head>
-	<title>Doyle Codes Portfolio</title>
-	<meta name="Ryan Doyle: Full Stack developer & educator." />
+	<title>Ryan Doyle · Developer & Educator</title>
+	<meta
+		name="description"
+		content="Ryan Doyle is an educator and web developer in Sacramento, CA, building tools for classrooms."
+	/>
 </svelte:head>
 
-<div class="hero-container">
-	<h5 class="tagline body">DEVELOPER | EDUCATOR | LEARNER</h5>
-	<h1 class="name">Ryan Doyle</h1>
-	<p class="message body">
-		{message}
+<header class="hero">
+	<p class="eyebrow">Developer · Educator · Learner</p>
+	<h1>Ryan Doyle</h1>
+	<p class="intro">
+		I'm an educator and web developer from Sacramento, CA, with a decade of experience teaching
+		middle school. I build apps for the classroom, with a focus on tools that are simple for
+		teachers and students to use.
 	</p>
-	<div style="margin-top:1rem;">
-		<Socials />
+	<div class="actions">
+		<a class="button" href="mailto:{email}">
+			<svg viewBox="0 0 24 24" aria-hidden="true">
+				<path
+					d="M1.5 8.67v8.58a3 3 0 0 0 3 3h15a3 3 0 0 0 3-3V8.67l-8.928 5.493a3 3 0 0 1-3.144 0L1.5 8.67Z"
+				/>
+				<path
+					d="M22.5 6.908V6.75a3 3 0 0 0-3-3h-15a3 3 0 0 0-3 3v.158l9.714 5.978a1.5 1.5 0 0 0 1.572 0L22.5 6.908Z"
+				/>
+			</svg>
+			Email me
+		</a>
+		<SocialLinks />
 	</div>
+</header>
 
-	<div style="margin-top:1rem;">
-		<EmailButton />
-	</div>
-</div>
+<section aria-labelledby="projects-heading">
+	<h2 id="projects-heading">Projects</h2>
 
-<div class="projects">
-	<h2>Projects</h2>
-	<div class="cards">
-		{#each portfolios as project}
-			<a href={`/project/${project.id}`}>
-				<ProjectCard {project} />
-			</a>
+	{#each featured as project (project.slug)}
+		<FeaturedProject {project} />
+	{/each}
+
+	<div class="grid">
+		{#each others as project (project.slug)}
+			<ProjectCard {project} />
 		{/each}
 	</div>
-</div>
+</section>
 
 <style>
-	a {
-		text-decoration: none;
-	}
-	h2,
-	p {
-		text-align: center;
-		line-height: 1.6rem;
+	.hero {
+		display: grid;
+		gap: 1.25rem;
+		padding-block: clamp(4rem, 14vh, 9rem) clamp(3rem, 8vh, 5rem);
 	}
 
-	.tagline {
-		color: var(--purple);
-		font-size: 1rem;
-		letter-spacing: 0.3rem;
+	.eyebrow {
+		color: var(--accent);
+		font-size: 0.8rem;
+		font-weight: 600;
+		letter-spacing: 0.2em;
+		text-transform: uppercase;
 	}
 
-	.hero-container,
-	.projects {
-		margin: auto;
-		width: 90%;
-		align-items: center;
+	h1 {
+		font-size: clamp(3.25rem, 10vw, 6.5rem);
+		font-weight: 450;
+		line-height: 0.95;
+		letter-spacing: -0.03em;
 	}
 
-	.hero-container {
-		height: 100vh;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
+	.intro {
+		max-width: 58ch;
+		color: var(--muted);
+		font-size: clamp(1.1rem, 2vw, 1.25rem);
 	}
 
-	.projects {
-		margin-top: 2rem;
-	}
-
-	.name {
-		font-size: 4rem;
-	}
-
-	.message {
-		letter-spacing: 0.1rem;
-		max-width: 700px;
-	}
-
-	.cards {
-		width: 100%;
+	.actions {
 		display: flex;
 		flex-wrap: wrap;
-		justify-content: center;
-		gap: 2rem;
+		align-items: center;
+		gap: 1rem;
+		margin-top: 0.5rem;
 	}
 
-	@media (max-width: 900px) {
-		p {
-			font-size: 0.9rem;
-		}
-
-		.tagline {
-			font-size: 0.85rem;
-		}
-		.name {
-			font-size: 3rem;
-		}
+	.button {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.6rem;
+		padding: 0.7rem 1.3rem;
+		border-radius: 999px;
+		background: var(--accent);
+		color: var(--on-accent);
+		font-weight: 600;
+		text-decoration: none;
+		transition: background-color 0.2s ease;
 	}
 
-	@media (max-width: 600px) {
-		p {
-			font-size: 0.7rem;
-		}
+	.button:hover {
+		background: var(--accent-strong);
+	}
 
-		h2 {
-			font-size: 1.6rem;
-		}
+	.button svg {
+		width: 1.1rem;
+		height: 1.1rem;
+		fill: currentColor;
+	}
 
-		.tagline {
-			font-size: 0.7rem;
-			text-align: center;
-			line-height: 1.2rem;
-			letter-spacing: 0.15rem;
-		}
-		.name {
-			font-size: 1.8rem;
-			margin: 1rem 0;
-		}
+	section {
+		display: grid;
+		gap: 2.5rem;
+	}
 
-		.hero-container {
-			height: 90vh;
+	h2 {
+		font-size: clamp(2rem, 5vw, 2.75rem);
+	}
+
+	.grid {
+		display: grid;
+		gap: 3.5rem 2.5rem;
+		margin-top: 1.5rem;
+	}
+
+	@media (min-width: 720px) {
+		.grid {
+			grid-template-columns: repeat(2, 1fr);
 		}
 	}
 </style>
