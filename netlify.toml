@@ -1,3 +1,12 @@
 [build]
 	command = "npm run build"
 	publish = "build"
+
+[build.environment]
+	NODE_VERSION = "24"
+
+# Project detail pages were removed when the site became a single page.
+[[redirects]]
+	from = "/project/*"
+	to = "/#projects-heading"
+	status = 301

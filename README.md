@@ -1,38 +1,24 @@
-# create-svelte
+# doylecodes.com
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).
-
-## Creating a project
-
-If you're seeing this, you've probably already done this step. Congrats!
-
-```bash
-# create a new project in the current directory
-npm create svelte@latest
-
-# create a new project in my-app
-npm create svelte@latest my-app
-```
+Personal portfolio for Ryan Doyle. A single prerendered page built with SvelteKit and deployed to Netlify as static files.
 
 ## Developing
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+Requires Node 22.17 or newer.
 
 ```bash
+npm install
 npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
 ```
 
-## Building
+`npm run check`, `npm run lint` and `npm test` should all pass before deploying.
 
-To create a production version of your app:
+## Adding or updating a project
 
-```bash
-npm run build
-```
+Projects live in [`src/lib/projects.ts`](src/lib/projects.ts).
 
-You can preview the production build with `npm run preview`.
+1. Put screenshots in `src/lib/assets/projects/`. Aim for 1600–1800px wide. The build generates AVIF/WebP at smaller widths, so the originals can stay large.
+2. Import each one with `?enhanced&w=1600;1000;600;320`, like the existing imports.
+3. Add an entry to `projects`. The first screenshot is the cover. Set `featured: true` to show the project in the large card with a screenshot gallery.
 
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+Social links and the contact email are in [`src/lib/links.ts`](src/lib/links.ts).

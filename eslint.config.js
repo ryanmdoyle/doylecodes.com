@@ -1,33 +1,43 @@
-import js from '@eslint/js';
-import ts from 'typescript-eslint';
-import svelte from 'eslint-plugin-svelte';
 import prettier from 'eslint-config-prettier';
+import path from 'node:path';
+import js from '@eslint/js';
+import svelte from 'eslint-plugin-svelte';
+import { defineConfig, includeIgnoreFile } from 'eslint/config';
 import globals from 'globals';
+import ts from 'typescript-eslint';
 
-/** @type {import('eslint').Linter.FlatConfig[]} */
-export default [
+const gitignorePath = path.resolve(import.meta.dirname, '.gitignore');
+
+export default defineConfig(
+	includeIgnoreFile(gitignorePath),
 	js.configs.recommended,
-	...ts.configs.recommended,
-	...svelte.configs['flat/recommended'],
+	ts.configs.recommended,
+	svelte.configs.recommended,
 	prettier,
-	...svelte.configs['flat/prettier'],
+	svelte.configs.prettier,
 	{
-		languageOptions: {
-			globals: {
-				...globals.browser,
-				...globals.node
-			}
+		languageOptions: { globals: { ...globals.browser, ...globals.node } },
+		rules: {
+			// typescript-eslint strongly recommend that you do not use the no-undef lint rule on TypeScript projects.
+			// see: https://typescript-eslint.io/troubleshooting/faqs/eslint/#i-get-errors-from-the-no-undef-rule-about-global-variables-not-being-defined-even-though-there-are-no-typescript-errors
+			'no-undef': 'off'
 		}
 	},
 	{
-		files: ['**/*.svelte'],
+		files: ['**/*.svelte', '**/*.svelte.ts', '**/*.svelte.js'],
 		languageOptions: {
 			parserOptions: {
+				projectService: true,
+				extraFileExtensions: ['.svelte'],
 				parser: ts.parser
 			}
 		}
 	},
 	{
-		ignores: ['build/', '.svelte-kit/', 'dist/']
+		rules: {
+			// Every link on the site is external (project sites, socials, mailto), so there are no
+			// internal routes to resolve(). Revisit if internal pages come back.
+			'svelte/no-navigation-without-resolve': ['error', { ignoreLinks: true }]
+		}
 	}
-];
+);
