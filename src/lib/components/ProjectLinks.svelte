@@ -14,7 +14,7 @@
 		{/if}
 		{#if project.links.code}
 			<a href={project.links.code} target="_blank" rel="noopener noreferrer">
-				Source <span aria-hidden="true">↗</span>
+				{project.codeLabel ?? 'Source'} <span aria-hidden="true">↗</span>
 				<span class="visually-hidden">code for {project.name}</span>
 			</a>
 		{/if}

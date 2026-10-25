@@ -25,6 +25,8 @@ export type Project = {
 	highlights: string[];
 	tech: string[];
 	links: { live?: string; code?: string };
+	/** Label for the code link when it isn't the current source, e.g. an earlier version. */
+	codeLabel?: string;
 	/** The first screenshot is the cover. */
 	screenshots: [Screenshot, ...Screenshot[]];
 	featured?: boolean;
@@ -46,7 +48,11 @@ export const projects: Project[] = [
 			'A projectable welcome screen and a public class board that shows only first names and initials.'
 		],
 		tech: ['RedwoodSDK', 'React', 'Cloudflare Workers', 'Supabase', 'Tailwind CSS'],
-		links: { live: 'https://www.classkudos.com' },
+		links: {
+			live: 'https://www.classkudos.com',
+			code: 'https://github.com/ryanmdoyle/class-kudos-beta'
+		},
+		codeLabel: 'v1 source',
 		screenshots: [
 			{
 				src: kudosGroups,
